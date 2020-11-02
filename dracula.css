@@ -19,11 +19,20 @@ QMenuBar, QMenu, QMenu::item,
 QComboBox QAbstractItemView,
 QTreeView, QListWidget, QListView, QTableWidget, QTableView,
 QTextEdit, QTextBrowser {
-    background-color: #3c3f41; /*#004100;*/
-    color: #bbbbbb;
+    background-color: #2b2b2b; /*#004100;*/
+    color: #a9b7c6;
 }
-
+QTreeView::item,QListView::item，QTableView::item
+{
+	color: #a9b7c6;
+}
+QTreeView::item:selected
+{background-color:#564839}
 /*
+QTreeView::item:hover{background-color:rgb(0,255,0,50)} 
+ */
+ 
+ /*
  * This is default values
  * Edit first if you want change appearance
  */
@@ -31,8 +40,8 @@ QTextEdit, QTextBrowser {
 QLabel, QTabBar::tab, QMenuBar::item,
 QCheckBox, QGroupBox {
     background-color: transparent;
-    color: #bbbbbb;
-    selection-color: #bbbbbb;
+    color: #a9b7c6;
+    selection-color: #a9b7c6;
 }
 
 /*
@@ -50,11 +59,17 @@ QGroupBox::title {
     subcontrol-position: top left;
     padding: 0 3px;
 }
+
 QCheckBox::indicator,
 QGroupBox::indicator {
     width: 13px;
     height: 13px;
 }
+QCheckBox::indicator:unchecked
+{
+	background-color: 2222bb;
+}
+/*
 QCheckBox::indicator:unchecked,
 QGroupBox::indicator:unchecked {
     image: url(:/qmldesigner/images/checkbox_unchecked.png);
@@ -82,14 +97,14 @@ QGroupBox::indicator:checked:pressed {
 QCheckBox::indicator:indeterminate:hover,
 QGroupBox::indicator:indeterminate:hover {
     background-color: #2222bb;
-    image: url(:/qmldesigner/images/checkbox_indeterminate_hover.png); /* TODO: There is no shuch image */
+    image: url(:/qmldesigner/images/checkbox_indeterminate_hover.png); 
 }
 QCheckBox::indicator:indeterminate:pressed,
 QGroupBox::indicator:indeterminate:pressed {
     background-color: #22bb22;
-    image: url(:/qmldesigner/images/checkbox_indeterminate_pressed.png); /* TODO: There is no shuch image */
+    image: url(:/qmldesigner/images/checkbox_indeterminate_pressed.png); 
 }
-
+ */
 
 QLineEdit, QAbstractSpinBox, QComboBox, QPushButton {
     background-color: #45494a;
@@ -124,6 +139,7 @@ QLineEdit, QAbstractSpinBox, QComboBox, QPushButton {
  *
  * TODO: Icons not fit into the overall style
  */
+ /*
 QAbstractSpinBox::up-button {
     image: url(:/qmldesigner/images/spinup.png);
 }
@@ -148,7 +164,7 @@ QAbstractSpinBox::down-button:off {
 QAbstractSpinBox::down-button:pressed {
     image: url(:/qmldesigner/images/spindown_pressed.png);
 }
-
+ */
 
 /*
  * PushButton and Utils::QtColorButton
@@ -206,14 +222,14 @@ QComboBox:!editable {
 QComboBox:!editable:on
 QComboBox::drop-down:editable:on
 QComboBox::drop-down:editable
-*/
+QComboBox::down-arrow {
+    image: url(:/qmldesigner/images/triangle_vert.png);
+}
 QComboBox:on {
     padding-top: 3px;
     padding-left: 4px;
 }
-QComboBox::down-arrow {
-    image: url(:/qmldesigner/images/triangle_vert.png);
-}
+
 QComboBox::down-arrow:on {
     top: 1px;
     left: 1px;
@@ -221,6 +237,8 @@ QComboBox::down-arrow:on {
 QComboBox::drop-down {
     border-left: 1px solid #646464;
 }
+*/
+
 QComboBox QAbstractItemView {
     border: 1px solid red;/*black;*/
     /*selection-background-color: #d2d2d2;
@@ -234,6 +252,7 @@ QComboBox QAbstractItemView {
  *
  * TODO: Checked circle is hard to spot
  */
+ /*
 QRadioButton::indicator {
     width: 13px;
     height: 13px;
@@ -256,7 +275,7 @@ QRadioButton::indicator:checked:hover {
 QRadioButton::indicator:checked:pressed {
     image: url(:/qmldesigner/images/radiobutton_checked_pressed.png);
 }
-
+ */
 
 /*
  * TabWidget and TabBar
@@ -664,4 +683,5 @@ TextEditor--TextEditorWidget > QWidget {
     selection-background-color: #4b6eaf;
     color: #bbbbbb; /* QT-BUG: Sadly this has no effect */
 }
+
 /* ^^^^^^^^^^^^^^^^^^^^^^^^^^ WORKAROUND ^^^^^^^^^^^^^^^^^^^^^^^^^^ */
